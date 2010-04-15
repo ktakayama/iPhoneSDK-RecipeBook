@@ -17,8 +17,8 @@
 }
 
 - (void) imagePickerController:(UIImagePickerController*)picker
-        didFinishPickingImage:(UIImage *)image
-                          editingInfo:(NSDictionary*)editingInfo {
+            didFinishPickingMediaWithInfo:(NSDictionary*)info {
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     CGImageRef imageRef = [image CGImage];
     size_t w, h;
     if (image.imageOrientation==UIImageOrientationUp ||
