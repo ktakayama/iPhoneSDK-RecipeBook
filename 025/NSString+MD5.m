@@ -23,7 +23,8 @@
         sprintf(md5string+i*2, "%02X", digest[i]);
     }
 
-    return [NSString stringWithCString:md5string length:CC_MD5_DIGEST_LENGTH*2];
+    return [NSString stringWithCString:md5string encoding:NSASCIIStringEncoding];
+    // return [NSString stringWithCString:md5string length:CC_MD5_DIGEST_LENGTH*2];
 }
 
 @end
