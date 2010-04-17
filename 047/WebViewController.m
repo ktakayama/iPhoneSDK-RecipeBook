@@ -1,8 +1,8 @@
 // 「レシピ047: UIWebViewをフィンガージェスチャーで操作する」のサンプルコード (P.103)
 
-#import "WebGestureViewController.h"
+#import "WebViewController.h"
 
-@implementation WebGestureViewController
+@implementation WebViewController
 
 // 2点間の距離を計算
 CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
@@ -11,28 +11,22 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     return sqrt(deltaX*deltaX + deltaY*deltaY );
 };
 
-- (void)webView:(UIWebView*)sender
-  zoomingBeganWithTouches:(NSSet*)touches event:(UIEvent*)event {
-    if (touches.count>1) {
-        initDistance = 0;
-        NSArray *twoTouches = [touches allObjects];
-        UITouch *first = [twoTouches objectAtIndex:0];
-        UITouch *second = [twoTouches objectAtIndex:1];
-        initDistance = distanceBetweenPoints([first locationInView:self.view], [second locationInView:self.view]);
-    }
-}
-
-- (void)webView:(UIWebView*)sender
-  zoomingMovedWithTouches:(NSSet*)touches event:(UIEvent*)event {
-    if (touches.count < 2) {
-        return;
-    }
-
+- (void) touchesBeganWeb:(NSSet *)touches withEvent:(UIEvent *)event {
+    initDistance = 0;
     NSArray *twoTouches = [touches allObjects];
     UITouch *first = [twoTouches objectAtIndex:0];
     UITouch *second = [twoTouches objectAtIndex:1];
-    CGFloat currentDistance = distanceBetweenPoints(
-       [first locationInView:self.view], [second locationInView:self.view]);
+    initDistance = distanceBetweenPoints([first locationInView:self.view],
+                                           [second locationInView:self.view]);
+}
+
+- (void) touchesMovedWeb:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSArray *twoTouches = [touches allObjects];
+    UITouch *first = [twoTouches objectAtIndex:0];
+    UITouch *second = [twoTouches objectAtIndex:1];
+    CGFloat currentDistance =
+       distanceBetweenPoints([first locationInView:self.view],
+                             [second locationInView:self.view]);
     if (initDistance == 0) {
         initDistance = currentDistance;
     }
@@ -51,8 +45,7 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     [gestureView drawGestureLine:touchPoints];
 }
 
-- (void)webView:(UIWebView*)sender
-  zoomingEndedWithTouches:(NSSet*)touches event:(UIEvent*)event {
+- (void) touchesEndedWeb:(NSSet *)touches withEvent:(UIEvent *)event {
     if (touchPoints.count<=0) {
         return;
     }
@@ -81,30 +74,39 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     initDistance = 0;
     touchPoints = [[NSMutableArray alloc] init];
 
-    // UIWebViewを生成
-    webView = [[GestureWebView alloc]
-                   initWithFrame:CGRectMake(0, 0, 320, 460)];
-    webView.delegate = self;
+    // UIWebView
+    webView = [[UIWebView alloc] initWithFrame:CGRectMake(0 ,0 , 320, 450)];
+    webView.userInteractionEnabled = YES;
+    webView.scalesPageToFit = YES;
     [self.view addSubview:webView];
     [webView release];
 
-    // UIWebViewの上にジェスチャーの軌跡を描画するUIViewを生成
-    gestureView = [[GestureView alloc]
-                   initWithFrame:CGRectMake(0, 0, 320, 460)];
-    // 透過させ、ユーザインタラクティブを無効にする
+    // ジェスチャーの軌跡を描画するビュー
+    gestureView =
+       [[GestureView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     gestureView.userInteractionEnabled = NO;
     gestureView.opaque = NO;
     [self.view addSubview:gestureView];
     [gestureView release];
 
+    // タッチイベントをフックするUIWindow
+    GestureWindow* tapWindow;
+    tapWindow = (GestureWindow*)[[UIApplication sharedApplication].windows
+                                                           objectAtIndex:0];
+    tapWindow.wView = webView;
+    tapWindow.delegate = self;
+
+    // URL をロードする
     [webView loadRequest:[NSURLRequest
-               requestWithURL:[NSURL URLWithString:@"http://example.com/"]]];
+       requestWithURL:[NSURL URLWithString:@"http://example.com/"]]];
 }
 
 - (void)dealloc {
+    [touchPoints release];
     [super dealloc];
 }
 
