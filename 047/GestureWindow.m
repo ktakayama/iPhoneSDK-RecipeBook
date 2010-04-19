@@ -1,19 +1,61 @@
 // 「レシピ047: UIWebViewをフィンガージェスチャーで操作する」のサンプルコード (P.103)
 
-@protocol GestureWindowDelegate
+#import "GestureWindow.h"
 
-- (void) touchesBeganWeb:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void) touchesMovedWeb:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void) touchesEndedWeb:(NSSet *)touches withEvent:(UIEvent *)event;
+@implementation GestureWindow
 
-@end
+@synthesize wView, delegate;
 
-@interface GestureWindow : UIWindow {
-    UIWebView* wView;
-    id delegate;
+-(void) dealloc {
+    [wView release];
+    [super dealloc];
 }
 
-@property (nonatomic, retain) UIWebView* wView;
-@property (nonatomic, assign) id delegate;
+- (void)sendEvent:(UIEvent *)event {
+    [super sendEvent:event];
+    if (wView == nil || delegate == nil) {
+        return;
+    }
+    // 2本指でのマルチタッチか
+    NSSet *touches = [event allTouches];
+    if (touches.count != 2) {
+        return;
+    }
+
+    UITouch *touch = touches.anyObject;
+    // 指定のUIWebViewへのタッチか
+    if ([touch.view isDescendantOfView:wView] == NO) {
+        return;
+    }
+
+    switch (touch.phase) {
+        case UITouchPhaseBegan:
+            if ([self.delegate
+                 respondsToSelector:@selector(touchesBeganWeb:withEvent:)]) {
+                [self.delegate
+                    performSelector:@selector(touchesBeganWeb:withEvent:)
+                    withObject:touches withObject:event];
+            }
+            break;
+        case UITouchPhaseMoved:
+            if ([self.delegate
+                 respondsToSelector:@selector(touchesMovedWeb:withEvent:)]) {
+                [self.delegate
+                    performSelector:@selector(touchesMovedWeb:withEvent:)
+                    withObject:touches withObject:event];
+            }
+            break;
+        case UITouchPhaseEnded:
+            if ([self.delegate
+                 respondsToSelector:@selector(touchesEndedWeb:withEvent:)]) {
+                [self.delegate
+                    performSelector:@selector(touchesEndedWeb:withEvent:)
+                    withObject:touches withObject:event];
+            }
+        default:
+            return;
+            break;
+    }
+}
 
 @end
