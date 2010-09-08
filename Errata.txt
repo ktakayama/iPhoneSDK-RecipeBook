@@ -1,48 +1,48 @@
-¡IIƒy[ƒW
-ŠeƒŒƒVƒs“à‚ÅĞ‰î‚µ‚Ä‚¢‚éƒ\[ƒXƒR[ƒhi‚·‚×‚Ä‚Å‚Í‚ ‚è‚Ü‚¹‚ñj‚ÍAŸ‚ÌURL‚æ‚èæ“¾‚Å‚«‚Ü‚·B
+â– IIãƒšãƒ¼ã‚¸
+å„ãƒ¬ã‚·ãƒ”å†…ã§ç´¹ä»‹ã—ã¦ã„ã‚‹ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ï¼ˆã™ã¹ã¦ã§ã¯ã‚ã‚Šã¾ã›ã‚“ï¼‰ã¯ã€æ¬¡ã®URLã‚ˆã‚Šå–å¾—ã§ãã¾ã™ã€‚
 http://github.com/ktakayama/iPhoneSDK-RecipeBook
-‚²g—p‚É‚ ‚½‚Á‚Ä‚ÍAã‹L‚©‚ç’H‚ê‚éƒtƒ@ƒCƒ‹uREADME.mdv‚ğ‚²——‚­‚¾‚³‚¢B
+ã”ä½¿ç”¨ã«ã‚ãŸã£ã¦ã¯ã€ä¸Šè¨˜ã‹ã‚‰è¾¿ã‚Œã‚‹ãƒ•ã‚¡ã‚¤ãƒ«ã€ŒREADME.mdã€ã‚’ã”è¦§ãã ã•ã„ã€‚
 
-¡39ƒy[ƒW
-ƒŒƒVƒs16uƒ†ƒj[ƒN‚Èƒtƒ@ƒCƒ‹–¼‚ğ¶¬‚·‚év
-ˆê‚Â–Ú‚ÌƒvƒƒOƒ‰ƒ€
-›C³‘O
+â– 39ãƒšãƒ¼ã‚¸
+ãƒ¬ã‚·ãƒ”16ã€Œãƒ¦ãƒ‹ãƒ¼ã‚¯ãªãƒ•ã‚¡ã‚¤ãƒ«åã‚’ç”Ÿæˆã™ã‚‹ã€
+ä¸€ã¤ç›®ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+â—‹ä¿®æ­£å‰
     NSString *fileName = [NSString stringWithFormat:@"%@.%@",uuidStr,ext];
 
     return fileName;
-›C³Œã
+â—‹ä¿®æ­£å¾Œ
     NSString *fileName = [NSString stringWithFormat:@"%@.%@",uuidStr,ext];
     CFRelease(uuidStr);
     return fileName;
 
-¡53ƒy[ƒW
-ƒŒƒVƒs25u•¶š—ñ‚©‚çMD5‚ğæ“¾‚·‚év
-ˆê‚Â–Ú‚ÌƒvƒƒOƒ‰ƒ€
-›C³‘O
+â– 53ãƒšãƒ¼ã‚¸
+ãƒ¬ã‚·ãƒ”25ã€Œæ–‡å­—åˆ—ã‹ã‚‰MD5ã‚’å–å¾—ã™ã‚‹ã€
+ä¸€ã¤ç›®ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+â—‹ä¿®æ­£å‰
     return [NSString stringWithCString:md5string length:CC_MD5_DIGEST_LENGTH*2];
 
-›C³Œã
+â—‹ä¿®æ­£å¾Œ
     return [NSString stringWithCString:md5string encoding:NSASCIIStringEncoding];
 
-¡178ƒy[ƒW
-ƒŒƒVƒs74uƒJƒƒ‰ƒ[ƒ‹‚©‚ç“Ç‚İ‚ñ‚¾Ê^‚Ìc‰¡ˆÊ’u‚ğ’²‚×‚év
-ˆê‚Â–Ú‚ÌƒvƒƒOƒ‰ƒ€
-›C³‘O
+â– 178ãƒšãƒ¼ã‚¸
+ãƒ¬ã‚·ãƒ”74ã€Œã‚«ãƒ¡ãƒ©ãƒ­ãƒ¼ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã‚“ã å†™çœŸã®ç¸¦æ¨ªä½ç½®ã‚’èª¿ã¹ã‚‹ã€
+ä¸€ã¤ç›®ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ 
+â—‹ä¿®æ­£å‰
 - (void) imagePickerController:(UIImagePickerController*)picker
          didFinishPickingImage:(UIImage *)image 
                    editingInfo:(NSDictionary*)editingInfo {
-›C³Œã
+â—‹ä¿®æ­£å¾Œ
 - (void) imagePickerController
             didFinishPickingMediaWithInfo:(NSDictionary*)info { 
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
 
-¡103ƒy[ƒW`109ƒy[ƒW
-ƒŒƒVƒs”Ô†‚ÆƒŒƒVƒsƒ^ƒCƒgƒ‹‚ğœ‚«
-‘S‘Ì‚ğ·‚µ‘Ö‚¦
-@Firefox‚È‚Ç‚Ìƒ}ƒEƒXƒWƒFƒXƒ`ƒƒ[‚Ì‚æ‚¤‚ÉUIWebView‚ğƒtƒBƒ“ƒK[ƒWƒFƒXƒ`ƒƒ[‚Å‘€ì‚·‚é•û–@‚Å‚·BUIWebView‚Å‚ÍƒVƒ“ƒOƒ‹ƒ^ƒbƒ`‚Í‰æ–ÊƒXƒNƒ[ƒ‹‚âŠg‘å‚È‚Ç‚Ì–ğŠ„‚ª‚ ‚é‚½‚ßAƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚Ì¶‰E‚ÌƒXƒƒCƒv‚Åƒuƒ‰ƒEƒU‚Ìu–ß‚évui‚Şv“®ì‚ªo—ˆ‚é‚æ‚¤‚É‚µ‚Ä‚İ‚Ü‚µ‚½Bƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚Íƒsƒ“ƒ`“®ì‚àŠÜ‚Ü‚ê‚é‚Ì‚Å‚»‚Ì•Ó‚è‚Ìl—¶‚à•K—v‚Å‚·B‚Ü‚½ƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚Ìƒ^ƒbƒ`‚Ì‹OÕ‚ğƒ}ƒEƒXƒWƒFƒXƒ`ƒƒ[‚Ì‚æ‚¤‚ÉÔ‚¢ƒ‰ƒCƒ“‚Å•\¦‚µ‚Ü‚µ‚½BˆÈ‰º‚Ì—á‚ÍAView-based Application‚ÅV‹KƒvƒƒWƒFƒNƒg‚ğì¬‚µ‚Ä‚¢‚Ü‚·B
-@‚Ü‚¸AÔ‚¢ƒ‰ƒCƒ“‚ğ•`‰æ‚·‚éƒrƒ…[‚ğì‚è‚Ü‚·BCGPoint‚ğNSMutableArray‚É“ü‚ê‚ÄdrawGestureLine:‚ğŒÄ‚Ô‚ÆÔ‚¢ƒ‰ƒCƒ“‚ğ•`‰æ‚µ‚Ü‚·B
+â– 103ãƒšãƒ¼ã‚¸ã€œ109ãƒšãƒ¼ã‚¸
+ãƒ¬ã‚·ãƒ”ç•ªå·ã¨ãƒ¬ã‚·ãƒ”ã‚¿ã‚¤ãƒˆãƒ«ã‚’é™¤ã
+å…¨ä½“ã‚’å·®ã—æ›¿ãˆ
+ã€€Firefoxãªã©ã®ãƒã‚¦ã‚¹ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã®ã‚ˆã†ã«UIWebViewã‚’ãƒ•ã‚£ãƒ³ã‚¬ãƒ¼ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã§æ“ä½œã™ã‚‹æ–¹æ³•ã§ã™ã€‚UIWebViewã§ã¯ã‚·ãƒ³ã‚°ãƒ«ã‚¿ãƒƒãƒã¯ç”»é¢ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã‚„æ‹¡å¤§ãªã©ã®å½¹å‰²ãŒã‚ã‚‹ãŸã‚ã€ãƒãƒ«ãƒã‚¿ãƒƒãƒã®å·¦å³ã®ã‚¹ãƒ¯ã‚¤ãƒ—ã§ãƒ–ãƒ©ã‚¦ã‚¶ã®ã€Œæˆ»ã‚‹ã€ã€Œé€²ã‚€ã€å‹•ä½œãŒå‡ºæ¥ã‚‹ã‚ˆã†ã«ã—ã¦ã¿ã¾ã—ãŸã€‚ãƒãƒ«ãƒã‚¿ãƒƒãƒã¯ãƒ”ãƒ³ãƒå‹•ä½œã‚‚å«ã¾ã‚Œã‚‹ã®ã§ãã®è¾ºã‚Šã®è€ƒæ…®ã‚‚å¿…è¦ã§ã™ã€‚ã¾ãŸãƒãƒ«ãƒã‚¿ãƒƒãƒæ™‚ã®ã‚¿ãƒƒãƒã®è»Œè·¡ã‚’ãƒã‚¦ã‚¹ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã®ã‚ˆã†ã«èµ¤ã„ãƒ©ã‚¤ãƒ³ã§è¡¨ç¤ºã—ã¾ã—ãŸã€‚ä»¥ä¸‹ã®ä¾‹ã¯ã€View-based Applicationã§æ–°è¦ãƒ—ãƒ­ã‚¸ã‚§ã‚¯ãƒˆã‚’ä½œæˆã—ã¦ã„ã¾ã™ã€‚
+ã€€ã¾ãšã€èµ¤ã„ãƒ©ã‚¤ãƒ³ã‚’æç”»ã™ã‚‹ãƒ“ãƒ¥ãƒ¼ã‚’ä½œã‚Šã¾ã™ã€‚CGPointã‚’NSMutableArrayã«å…¥ã‚Œã¦drawGestureLine:ã‚’å‘¼ã¶ã¨èµ¤ã„ãƒ©ã‚¤ãƒ³ã‚’æç”»ã—ã¾ã™ã€‚
 
-¤ƒtƒ@ƒCƒ‹
+â–½ãƒ•ã‚¡ã‚¤ãƒ«
 @interface GestureView : UIView {
     NSMutableArray* touchPoints;
 }
@@ -57,7 +57,7 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
 }
 
 - (void)drawRect:(CGRect)rect {
-    // ƒWƒFƒXƒ`ƒƒ[‚Ì‹OÕ‚ğ•`‰æ‚·‚é
+    // ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã®è»Œè·¡ã‚’æç”»ã™ã‚‹
     if (touchPoints.count > 0 ) {
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetLineWidth(context, 5.0f);
@@ -74,11 +74,11 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
 }
 
 @end
-¢ƒtƒ@ƒCƒ‹
+â–³ãƒ•ã‚¡ã‚¤ãƒ«
 
-@Ÿ‚ÉƒtƒBƒ“ƒK[ƒWƒFƒXƒ`ƒƒ[‚ğ”F¯‚·‚é‚½‚ß‚Éƒ^ƒbƒ`“®ì‚ğƒtƒbƒN‚·‚éUIWindow‚ÌƒTƒuƒNƒ‰ƒX‚ğì‚è‚Ü‚·BUIWindow‚ÌsendEvent:‚Å‚·‚×‚Ä‚Ìƒ^ƒbƒ`“®ì‚ğƒtƒbƒN‚µ‚ÄUIWebView‚Ö‚Ì2–{w‚Å‚Ìƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚Ì‚Æ‚«‚Ì‚İAdelegate‚ğ’Ê‚¶‚Äƒ^ƒbƒ`ƒCƒxƒ“ƒg‚ğ’Ê’m‚µ‚Ü‚·B‚Ü‚½AƒtƒbƒN‚µ‚½ƒ^ƒbƒ`ƒCƒxƒ“ƒg‚Í‘S‚ÄƒX[ƒp[ƒNƒ‰ƒX‚Ö‚»‚Ì‚Ü‚Ü“n‚·‚±‚Æ‚É‚æ‚èA’Êí‚Ìƒ^ƒbƒ`ƒCƒxƒ“ƒg‚ğ×–‚‚µ‚È‚¢‚æ‚¤‚É‚µ‚Ü‚·B
+ã€€æ¬¡ã«ãƒ•ã‚£ãƒ³ã‚¬ãƒ¼ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã‚’èªè­˜ã™ã‚‹ãŸã‚ã«ã‚¿ãƒƒãƒå‹•ä½œã‚’ãƒ•ãƒƒã‚¯ã™ã‚‹UIWindowã®ã‚µãƒ–ã‚¯ãƒ©ã‚¹ã‚’ä½œã‚Šã¾ã™ã€‚UIWindowã®sendEvent:ã§ã™ã¹ã¦ã®ã‚¿ãƒƒãƒå‹•ä½œã‚’ãƒ•ãƒƒã‚¯ã—ã¦UIWebViewã¸ã®2æœ¬æŒ‡ã§ã®ãƒãƒ«ãƒã‚¿ãƒƒãƒã®ã¨ãã®ã¿ã€delegateã‚’é€šã˜ã¦ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã‚’é€šçŸ¥ã—ã¾ã™ã€‚ã¾ãŸã€ãƒ•ãƒƒã‚¯ã—ãŸã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã¯å…¨ã¦ã‚¹ãƒ¼ãƒ‘ãƒ¼ã‚¯ãƒ©ã‚¹ã¸ãã®ã¾ã¾æ¸¡ã™ã“ã¨ã«ã‚ˆã‚Šã€é€šå¸¸ã®ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã‚’é‚ªé­”ã—ãªã„ã‚ˆã†ã«ã—ã¾ã™ã€‚
 
-¤ƒtƒ@ƒCƒ‹
+â–½ãƒ•ã‚¡ã‚¤ãƒ«
 @protocol GestureWindowDelegate
 
 - (void) touchesBeganWeb:(NSSet *)touches withEvent:(UIEvent *)event;
@@ -111,14 +111,14 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
     if (wView == nil || delegate == nil) {
         return;
     }
-    // 2–{w‚Å‚Ìƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚©
+    // 2æœ¬æŒ‡ã§ã®ãƒãƒ«ãƒã‚¿ãƒƒãƒã‹
     NSSet *touches = [event allTouches];
     if (touches.count != 2) {
         return;
     }
 
     UITouch *touch = touches.anyObject;
-    // w’è‚ÌUIWebView‚Ö‚Ìƒ^ƒbƒ`‚©
+    // æŒ‡å®šã®UIWebViewã¸ã®ã‚¿ãƒƒãƒã‹
     if ([touch.view isDescendantOfView:wView] == NO) {
         return;
     }
@@ -154,11 +154,11 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
 }
 
 @end
-¢ƒtƒ@ƒCƒ‹
+â–³ãƒ•ã‚¡ã‚¤ãƒ«
 
-@‚±‚ÌGestureWindowƒNƒ‰ƒX‚ğƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌUIWindow‚Æ‚µ‚Äg‚¢‚Ü‚·BAppDelegateƒNƒ‰ƒX‚ÌUIWindow‚ğŸ‚Ì‚æ‚¤‚ÉGesutreWindows‚É•ÏX‚µ‚Ü‚·B‚Ü‚½MainWindow.xib‚ğInterfaceBuilder‚ÅŠJ‚«AUIWindow‚ğ‘I‘ğˆAInspector‚ÅClass Identity‚ğGestureWindow‚É•ÏX‚µ‚Ü‚·B
+ã€€ã“ã®GestureWindowã‚¯ãƒ©ã‚¹ã‚’ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®UIWindowã¨ã—ã¦ä½¿ã„ã¾ã™ã€‚AppDelegateã‚¯ãƒ©ã‚¹ã®UIWindowã‚’æ¬¡ã®ã‚ˆã†ã«GesutreWindowsã«å¤‰æ›´ã—ã¾ã™ã€‚ã¾ãŸMainWindow.xibã‚’InterfaceBuilderã§é–‹ãã€UIWindowã‚’é¸æŠè‚¢ã€Inspectorã§Class Identityã‚’GestureWindowã«å¤‰æ›´ã—ã¾ã™ã€‚
 
-¤ƒtƒ@ƒCƒ‹
+â–½ãƒ•ã‚¡ã‚¤ãƒ«
 @interface WebAppDelegate : NSObject <UIApplicationDelegate> {
     GestureWindow *window;
     WebViewController *viewController;
@@ -168,11 +168,11 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
 @property (nonatomic, retain) IBOutlet WebViewController *viewController;
 
 @end
-¢ƒtƒ@ƒCƒ‹
+â–³ãƒ•ã‚¡ã‚¤ãƒ«
 
-@ÅŒã‚ÉGestureViewAUIWebView‚ğ‚¿AƒWƒFƒXƒ`ƒƒ[‚ğ‰ğÍ‚·‚éUIViewController‚ğì‚è‚Ü‚·Bƒ^ƒbƒ`ƒCƒxƒ“ƒg‚ª‚ ‚é‚ÆAƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚Å‚©‚ÂAƒsƒ“ƒ`“®ì‚Å‚Í‚È‚­A…•½•ûŒü‚ÉGESTURE_LENGTHˆÈãƒXƒƒCƒv‚³‚ê‚ê‚ÎAƒWƒFƒXƒ`ƒƒ[‚Æ‚µ‚Ä”F¯‚µ‚Ä¶‰E•ûŒü‚É‚æ‚èu–ß‚évui‚Şv‚Ì“®ì‚ğUIWebView‚É‘Î‚µ‚Äs‚¢‚Ü‚·B
+ã€€æœ€å¾Œã«GestureViewã€UIWebViewã‚’æŒã¡ã€ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã‚’è§£æã™ã‚‹UIViewControllerã‚’ä½œã‚Šã¾ã™ã€‚ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆãŒã‚ã‚‹ã¨ã€ãƒãƒ«ãƒã‚¿ãƒƒãƒã§ã‹ã¤ã€ãƒ”ãƒ³ãƒå‹•ä½œã§ã¯ãªãã€æ°´å¹³æ–¹å‘ã«GESTURE_LENGTHä»¥ä¸Šã‚¹ãƒ¯ã‚¤ãƒ—ã•ã‚Œã‚Œã°ã€ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã¨ã—ã¦èªè­˜ã—ã¦å·¦å³æ–¹å‘ã«ã‚ˆã‚Šã€Œæˆ»ã‚‹ã€ã€Œé€²ã‚€ã€ã®å‹•ä½œã‚’UIWebViewã«å¯¾ã—ã¦è¡Œã„ã¾ã™ã€‚
 
-¤ƒtƒ@ƒCƒ‹
+â–½ãƒ•ã‚¡ã‚¤ãƒ«
 #define GESTURE_LENGTH  50
 #define BLUR_LENGTH     50
 #define PINCH_DELTA     100
@@ -191,7 +191,7 @@ http://github.com/ktakayama/iPhoneSDK-RecipeBook
 
 @implementation WebViewController
 
-// 2“_ŠÔ‚Ì‹——£‚ğŒvZ
+// 2ç‚¹é–“ã®è·é›¢ã‚’è¨ˆç®—
 CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     CGFloat deltaX = second.x - first.x;
     CGFloat deltaY = second.y - first.y;
@@ -218,7 +218,7 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
         initDistance = currentDistance;
     }
 
-    // ƒsƒ“ƒ`“®ì‚©ƒ`ƒFƒbƒN
+    // ãƒ”ãƒ³ãƒå‹•ä½œã‹ãƒã‚§ãƒƒã‚¯
     if (fabs(currentDistance - initDistance) > PINCH_DELTA) {
         [touchPoints removeAllObjects];
         [gestureView drawGestureLine:touchPoints];
@@ -245,15 +245,15 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     CGFloat deltaY = point2.y - point1.y;
     if (fabsf(deltaX) >= GESTURE_LENGTH && fabsf(deltaY) <= BLUR_LENGTH) {
         if (deltaX < 0) {
-            // –ß‚é
+            // æˆ»ã‚‹
             [webView goBack];
         } else {
-            // i‚Ş
+            // é€²ã‚€
             [webView goForward];
         }
     } else if (fabsf(deltaY) >= GESTURE_LENGTH &&
                fabsf(deltaX) <= BLUR_LENGTH) {
-        // ã‰º•ûŒü‚Éƒ}ƒ‹ƒ`ƒ^ƒbƒ`ƒXƒƒCƒv
+        // ä¸Šä¸‹æ–¹å‘ã«ãƒãƒ«ãƒã‚¿ãƒƒãƒã‚¹ãƒ¯ã‚¤ãƒ—
     }
     [touchPoints removeAllObjects];
     [gestureView setNeedsDisplay];
@@ -272,7 +272,7 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     [self.view addSubview:webView];
     [webView release];
 
-    // ƒWƒFƒXƒ`ƒƒ[‚Ì‹OÕ‚ğ•`‰æ‚·‚éƒrƒ…[
+    // ã‚¸ã‚§ã‚¹ãƒãƒ£ãƒ¼ã®è»Œè·¡ã‚’æç”»ã™ã‚‹ãƒ“ãƒ¥ãƒ¼
     gestureView =
        [[GestureView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
     gestureView.userInteractionEnabled = NO;
@@ -280,14 +280,14 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
     [self.view addSubview:gestureView];
     [gestureView release];
 
-    // ƒ^ƒbƒ`ƒCƒxƒ“ƒg‚ğƒtƒbƒN‚·‚éUIWindow
+    // ã‚¿ãƒƒãƒã‚¤ãƒ™ãƒ³ãƒˆã‚’ãƒ•ãƒƒã‚¯ã™ã‚‹UIWindow
     GestureWindow* tapWindow;
     tapWindow = (GestureWindow*)[[UIApplication sharedApplication].windows
                                                            objectAtIndex:0];
     tapWindow.wView = webView;
     tapWindow.delegate = self;
 
-    // URL ‚ğƒ[ƒh‚·‚é
+    // URL ã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
     [webView loadRequest:[NSURLRequest
        requestWithURL:[NSURL URLWithString:@"http://example.com/"]]];
 }
@@ -298,11 +298,11 @@ CGFloat distanceBetweenPoints (CGPoint first, CGPoint second) {
 }
 
 @end
-¢ƒtƒ@ƒCƒ‹
+â–³ãƒ•ã‚¡ã‚¤ãƒ«
 
-@ƒVƒ~ƒ…ƒŒ[ƒ^‚Å‚Ì“®ìƒ`ƒFƒbƒN‚É‚ÍA110ƒy[ƒW‚ÌƒRƒ‰ƒ€uiPhoneƒVƒ~ƒ…ƒŒ[ƒ^‚Åƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚ğ•½s‚É“®‚©‚·•û–@v‚Å‘‚©‚ê‚½•û–@‚ªƒ}ƒ‹ƒ`ƒ^ƒbƒ`‚ğ•½s‚É“®‚©‚¹‚Ä•Ö—˜‚Å‚·B
+ã€€ã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã§ã®å‹•ä½œãƒã‚§ãƒƒã‚¯ã«ã¯ã€110ãƒšãƒ¼ã‚¸ã®ã‚³ãƒ©ãƒ ã€ŒiPhoneã‚·ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿ã§ãƒãƒ«ãƒã‚¿ãƒƒãƒã‚’å¹³è¡Œã«å‹•ã‹ã™æ–¹æ³•ã€ã§æ›¸ã‹ã‚ŒãŸæ–¹æ³•ãŒãƒãƒ«ãƒã‚¿ãƒƒãƒã‚’å¹³è¡Œã«å‹•ã‹ã›ã¦ä¾¿åˆ©ã§ã™ã€‚
 
-¡320ƒy[ƒW
-u”­s“úv‚ÌŸ‚Ìs‚ÉˆÈ‰º‚ğ’Ç‰Á
+â– 320ãƒšãƒ¼ã‚¸
+ã€Œç™ºè¡Œæ—¥ã€ã®æ¬¡ã®è¡Œã«ä»¥ä¸‹ã‚’è¿½åŠ 
 
-2010”N7Œ10“ú	‘æ1”Å‘æ2ü
+2010å¹´7æœˆ10æ—¥	ç¬¬1ç‰ˆç¬¬2åˆ·
